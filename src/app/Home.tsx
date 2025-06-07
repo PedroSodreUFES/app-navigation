@@ -2,15 +2,25 @@ import { ButtonIcon } from "@/components/ButtonIcon";
 import { Header } from "@/components/Header";
 import { Title } from "@/components/Title";
 // import { StackRoutesProps } from "@/routes/StackRoutes";
-import { BottomRoutesProps } from "@/routes/BottomRoutes";
+// import { BottomRoutesProps } from "@/routes/BottomRoutes";
+import { DrawerRoutesProps } from "@/routes/DrawerRoutes";
 import { View } from "react-native";
 
-export function Home({ navigation }: BottomRoutesProps<"home">) {    
+export function Home({ navigation }: DrawerRoutesProps<"home">) {
     return (
         <View style={{ flex: 1, padding: 32, paddingTop: 54 }}>
             <Header>
+                <ButtonIcon 
+                  name="menu" 
+                  onPress={navigation.toggleDrawer} 
+                  />
+                
                 <Title>Home</Title>
-                <ButtonIcon name="add-circle" onPress={() => navigation.navigate("product", { id: "1" })} />
+                
+                <ButtonIcon 
+                  name="add-circle" 
+                  onPress={() => navigation.navigate("product", { id: "1" })} 
+                  />
             </Header>
         </View>
     )
